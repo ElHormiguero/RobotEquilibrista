@@ -1,5 +1,4 @@
 /* Robot auto equilibrado con dos PID en cascada y un control de la posición.
-   Idea basa en proyecto de American Hacker.
    Autor: Javier Vargas. El Hormiguero.
    https://creativecommons.org/licenses/by/4.0/
 */
