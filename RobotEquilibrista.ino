@@ -121,7 +121,6 @@ void setup() {
   PPcm = (float)PasosVuelta / (2 * PI * RadioRueda); //Pasos por centímetro recorrido
 
   delay(1000);
-  Serial.println("Robot Serial");
 }
 
 ////////////////////
