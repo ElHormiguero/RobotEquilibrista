@@ -1,4 +1,4 @@
-/* Robot auto equilibrado con dos PID en cascada y un control de la posición.
+/* Robot auto equilibrado con dos PID en cascada y un control de la posición. Programado sobre Arduino Leonarado (2 timer de 16 bits)
    Autor: Javier Vargas. El Hormiguero.
    https://creativecommons.org/licenses/by/4.0/
 */
