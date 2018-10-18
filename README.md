@@ -1,0 +1,8 @@
+# RobotEquilibrista
+Los robots conocidos como robots auto balanceados o “self balancing robot” se caracterizan por mantener el equilibrio sobre dos ruedas, lo cual hace que el eje vertical sea inestable si no aplicamos un algoritmo de control. Tiene un acelerómetro y giróscopo para obtener el ángulo de la vertical, dos motores paso a paso que permiten saber a qué velocidad se mueven y cuanto se han desplazado, un chip de radiofrecuencia para el control remoto desde el mando y un microcontrolador.
+
+El funcionamiento se basa en dos PID en cascada y un tercer controlador proporcional:
+
+El primero de ellos tiene como entrada el ángulo del robot proporcionado por un acelerómetro, y como salida la aceleración de los motores, de forma que si aumenta el ángulo (se desestabiliza), acelera para que la propia inercia lo mantenga vertical. Realmente es un controlador PD, ya que la parte integral no es necesaria.
+El segundo controlador trata de mantener la velocidad indicada por el usuario. Si solo mantenemos el controlador anterior, por muy calibrado que tengamos el ángulo cero, el robot tenderá a irse hacia uno u otro lado, por ello es necesario un PID que corrija el ángulo objetivo del controlador anterior en función de la velocidad actual, de esta forma ajustamos el ángulo deseado para mantener una velocidad. Este controlador no requiere de componente derivativa, por lo que es un PI.
+FInalmente se ha integrado un controlador proporcional P que mantiene la posición del robot fija, actúa aplicando una velocidad objetivo al controlador anterior en función del error de posición, esto hace que al desplazarlo, vuelva a su posición inicial. Dicho controlador solo se utiliza en caso de no estar estableciendo una velocidad desde el mando.
